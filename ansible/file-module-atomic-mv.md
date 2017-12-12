@@ -4,9 +4,9 @@
 ansible の file module での file 操作は atomic な置き換えである :tada:
 
 ## 経緯
-symlink を `ln -sf` すると `rm` + `ln` になるので神のタイミング(rm から ln するまでの間)でpath を参照されると見えなくなる場合がある
-そのため safe な置き換えのためには、隣に new を作成し `mv -T new old` で atomic に置き換える必要がある
-ansible の file module の `state: symlink` は `ln -sf new old` をしているのか new を作って `mv -T` 相当をしているのか不明だったので調査
+symlink を `ln -sf` すると `rm` + `ln` になるので神のタイミング(rm から ln するまでの間)でpath を参照されると見えなくなる場合がある  
+そのため safe な置き換えのためには、隣に new を作成し `mv -T new old` で atomic に置き換える必要がある  
+ansible の file module の `state: symlink` は `ln -sf new old` をしているのか new を作って `mv -T` 相当をしているのか不明だったので調査  
 
 ## file module
 もはやコメントに書いてあるが
@@ -29,4 +29,4 @@ dest path に `.${PID}.${EPOCH_TIME}.tmp` で置いた後
 
 [os.rename](https://docs.python.jp/2.7/library/os.html#os.rename) で置き換えているため atomic に置き換えることができる
 
-ちなみに mv でも file system をまたぐと atomic な置き換えは出来ない
+mv であっても file system をまたぐと atomic な置き換えは出来ない
