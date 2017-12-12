@@ -1,11 +1,11 @@
 # ansible の file module は atomic に置き換えができるか
 
 ## TL;DR
-ansible の file module での symlink 上書きは atomic な置き換えである :tada:
+ansible の file module での file 操作は atomic な置き換えである :tada:
 
 ## 経緯
-symlink を `ln -sf` すると `rm` + `ln` になるので神のタイミング(rm から ln するまでの間)でpath を参照されると見えなくなる場合がある。
-そのため safe な置き換えのためには、隣に new を作成し `mv -T new old` で atomic に置き換える必要がある。
+symlink を `ln -sf` すると `rm` + `ln` になるので神のタイミング(rm から ln するまでの間)でpath を参照されると見えなくなる場合がある
+そのため safe な置き換えのためには、隣に new を作成し `mv -T new old` で atomic に置き換える必要がある
 ansible の file module の `state: symlink` は `ln -sf new old` をしているのか new を作って `mv -T` 相当をしているのか不明だったので調査
 
 ## file module
