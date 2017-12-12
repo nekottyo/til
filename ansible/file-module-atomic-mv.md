@@ -18,8 +18,6 @@ ansible の file module の `state: symlink` は `ln -sf new old` をしてい�
                 b_tmppath = to_bytes(os.path.sep).join(
                     [os.path.dirname(b_path), to_bytes(".%s.%s.tmp" % (os.getpid(), time.time()))]
                 )
-
-
 ```
 dest path に `.${PID}.${EPOCH_TIME}.tmp` で置いた後
 
