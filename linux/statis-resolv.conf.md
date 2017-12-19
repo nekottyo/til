@@ -16,8 +16,8 @@ dns=none
 ```
 
 ## 参考
-- [https://docs.docker.com/engine/userguide/networking/default_network/configure-dns/]
-- [https://askubuntu.com/questions/623940/network-manager-how-to-stop-nm-updating-etc-resolv-conf]
-- [https://qiita.com/hirosemi/items/0574a4b044f46c6ac5af]
+- https://docs.docker.com/engine/userguide/networking/default_network/configure-dns/
+- https://askubuntu.com/questions/623940/network-manager-how-to-stop-nm-updating-etc-resolv-conf
+- https://qiita.com/hirosemi/items/0574a4b044f46c6ac5af
 
 
