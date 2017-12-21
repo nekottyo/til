@@ -7,7 +7,7 @@ inventory が 従来の ini 形式ではなく yaml inventory だったら `-y` 
 
 [enginyoyen/ansible-best-practises](https://github.com/enginyoyen/ansible-best-practises) を使って試す
 
-# `--graph`
+## `--graph`
 group と host の紐付けを tree 表示する。children に指定した入れ子も解決してくれる
 
 ```
@@ -25,7 +25,7 @@ ansible-best-practises> ansible-inventory -i production.ini --graph
 ```
 
 
-# `--host HOSTNAME`
+## `--host HOSTNAME`
 単一の host を指定し、group_vars, host_vars を集めて変数を表示する
 
 ```json
