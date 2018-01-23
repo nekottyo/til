@@ -3,9 +3,9 @@ Kibana X-pack monitoring で "CPU Usage", "CPU Throttling" が 0 になる
 
 # 症状
 
-cpu 使用率とか load average がでないとき
+cpu 使用率とか load average がでない
 
-![monitoring](https://discuss.elastic.co/t/kibana-monitoring-elasticsearch-nodes-doesnt-show-cpu-usage/86505)
+![monitoring](https://cdn-enterprise.discourse.org/elastic/uploads/default/original/3X/b/7/b720d23c1d2c49348c9dd0ed3a3170bfc55a21c7.jpg)
 
 
 - kibana は docker: docker.elastic.co/kibana/kibana:5.6.5
