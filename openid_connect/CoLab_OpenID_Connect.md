@@ -25,7 +25,7 @@
 ## OpenID Connect
 
 OpenID とは別物、 OAuth 2.0 を拡張したプロトコル
-REST like, Json やりとり
+REST API, JSON やりとり
 
 
 認証、認可両方
@@ -41,7 +41,7 @@ SAML よりも新規サービスでは採用される傾向
 
 https://openid.net/connect
 
-(image)[http://openid.net/wordpress-content/uploads/2014/02/OpenIDConnect-Map-4Feb2014.png]
+![image](http://openid.net/wordpress-content/uploads/2014/02/OpenIDConnect-Map-4Feb2014.png)
 
 
 ## OpenID connect 認証フロー
@@ -89,14 +89,15 @@ issuer(idp: id_token発行したひと) が audience(RP) のために subject(id
 ## format: JSON Web Token
 
 JSON を URL Safeな Base64 エンコードしたシグエンチャつきトークン
+
 - ヘッダ、ペイロード、シグネチャで構成
 
 ### ヘッダ
 
 ```json
 {
-	"type":"JWT", じょっとと読む JSON Web Tokeno
-	"alg":"RS256" アルゴリズム, RSA-SHA256
+	"type":"JWT", "// じょっとと読む JSON Web Tokeno"
+	"alg":"RS256" "アルゴリズム, RSA-SHA256"
 }
 ```
 
@@ -104,12 +105,12 @@ JSON を URL Safeな Base64 エンコードしたシグエンチャつきトー�
 
 ```json
 {
-	"iss":"url", issuer, トークン発行者
-	"sub":"123456", subject, ユーザ識別子
-	"aud":"abcdfg", audience, client ID トークン払い出し先
-	"nonce":"xyz" リプレイ攻撃対策用
+	"iss":"url", "//issuer, トークン発行者"
+	"sub":"123456", "//subject, ユーザ識別子"
+	"aud":"abcdfg", "//audience, client ID トークン払い出し先"
+	"nonce":"xyz" "//リプレイ攻撃対策用"
 	"iat""21234581"
-	"exp":123456 expiration, 有効期限, 同じ期限にしなくても良い
+	"exp":123456 "//expiration, 有効期限, 同じ期限にしなくても良い"
 }
 ```
 
@@ -119,11 +120,11 @@ JSON を URL Safeな Base64 エンコードしたシグエンチャつきトー�
 Base64 エンコード
 
 - URS Safe
-	- + -> -
-	- / -> _
-	- = -> ''
+	- `+` -> `-`
+	- `/` -> `_`
+	- `=` -> `''` (削る
 
-- Json の {" を Base64 にすると eyJ になる
+- JSON の `{"` を Base64 にすると eyJ になる(アゲアゲ)
 - ピリオドで繋ぐ
 - シグネチャにかけて Base64 にで URLセーフにエンコード
 - ピリオドでつなげる
@@ -134,10 +135,9 @@ Base64 エンコード
 - 3つ目を公開鍵で検証
 
 
-
 # UserInfo Endpoint
 
-OpenID Connect ではよく利用される指名, 住所, メールアドレスなどの属性情報を取得しやすいように Climを指定する
+OpenID Connect ではよく利用される指名, 住所, メールアドレスなどの属性情報を取得しやすいように Claim を指定する
 
 - Req
 	- bearer つける
