@@ -62,7 +62,7 @@ https://openid.net/connect
 
 - IdP: Identity Provider
 	- 認証を行って ID, 属性を提供
-- OP: O[enID Provider
+- OP: OpenID Provider
 	- IdP とほぼ同じ、 OpenID での呼び方
 - RP: Relying Party
 	- IdP の認証を利用して ユーザにサービスを提供する
