@@ -79,8 +79,8 @@ https://openid.net/connect
 - Responce
 	- param に `code=認可コード` + `state=セッションに紐付けたState`
 - Token REsponce
-	- Body に `token_type: Beare`
-	- OAuth Beare
+	- Body に `token_type: Bearer`
+	- OAuth Bearer
 	- `id_token` を検証してユーザ認証
 
 # ID Token
@@ -140,7 +140,7 @@ Base64 エンコード
 OpenID Connect ではよく利用される指名, 住所, メールアドレスなどの属性情報を取得しやすいように Climを指定する
 
 - Req
-	- beare つける
+	- bearer つける
 - Res
 	- いろんな属性が帰ってくる
 	- 氏名, 送信可能なメールアドレス, 住所, 電話とか
