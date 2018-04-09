@@ -164,7 +164,7 @@ http://127.0.0.1:3000/user/show/nekottyo
 
 ## DB create
 
-db create
+`db:create`
 
 ```
 ruby-on-rails-grade-school> rails db:create
@@ -205,3 +205,132 @@ class CreateUsers < ActiveRecord::Migration[5.1]
  end
 end
 ```
+
+`rails db:migrate` で db 作る
+```
+ruby-on-rails-grade-school> rake db:migrate
+== 20180409110638 CreateUsers: migrating ======================================
+-- create_table(:users)
+  -> 0.0007s
+== 20180409110638 CreateUsers: migrated (0.0008s) =============================
+```
+
+## seed で種作る
+
+`db/sheeds.rb`
+```ruby
+ruby-on-rails-grade-school> cat db/seeds.rb
+@user = User.new
+@user.name = 'Nekottyo'
+@user.username = 'nekottyo'
+@user.location = 'Tokyo, Japan'
+@user.about = 'Hello, I am nekottyo. I am from database!'
+@user.save
+
+@user = User.new
+@user.name = 'Shohei Aoki'
+@user.username = 'moyahima'
+@user.location = 'Tottori, Japan'
+@user.about = 'Nice to meet you. I am from database!'
+@user.save
+```
+
+## DB から引っ張る
+
+`app/controllers/users_controller.rb`
+```ruby
+class UsersController < ApplicationController
+  def show
+    @user = User.find_by(:username => params[:username])
+  end
+end
+```
+
+# twitter つくる
+
+## controller, model 作成
+
+```
+rails generate controller tweets index show new
+rails g model tweet title:string context:text
+```
+
+## form
+
+今の new
+
+![new](https://raw.github.com/mitakalab/wiki/master/screenshots/rails/rails-10.png)
+
+view の form を入れる(フォームヘルパー)
+
+`app/views/tweets/new.html.erb`
+
+```erb
+<%= form_for Tweet.new do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :context %>
+  <%= f.text_area :context %>
+  <%= f.submit %>
+<% end %>
+```
+````
+undefined method `tweets_path' for #<#<Class:0x00007f1e7c6ea9c8>:0x00007f1e7c3db1b0>
+```
+
+form の投げ先がわからん ので route に足す
+
+```diff
+Rails.application.routes.draw do
+  get 'tweets/index'
+
+  get 'tweets/show'
+
+  get 'tweets/new'
+
++  post 'tweets' => 'tweets#create'
+
+  get 'users/index'
+
+  get 'users/show/:username' => "users#show"
+end
+```
+
+すると form が表示されて入力すると
+
+![](https://raw.github.com/mitakalab/wiki/master/screenshots/rails/rails-13.png)
+
+`#create` がないから error になる
+
+![](https://raw.github.com/mitakalab/wiki/master/screenshots/rails/rails-14.png)
+
+データは `params` の hash で飛んでくるので `params` で受け取る
+
+`app/controllers/tweets_controller.rb`
+
+```ruby
+def create
+  @tweet = Tweet.new
+  @tweet.title = params[:tweet][:title]
+  @tweet.context = params[:tweet][:context]
+  @tweet.save
+end
+```
+
+create の view がないのでエラーになる
+
+最後に index に redirect してあげる
+
+`app/view/tweets_controller.rb`
+
+```ruby
+def create
+  @tweet = Tweet.new
+  @tweet.title = params[:tweet][:title]
+  @tweet.context = params[:tweet][:context]
+  @tweet.save
+  redirect_to '/tweets/index'
+end
+```
+
+`tweets/new` で post すると `tweets/index` に redirect される
