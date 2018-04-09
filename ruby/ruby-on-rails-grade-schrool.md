@@ -274,7 +274,7 @@ view の form を入れる(フォームヘルパー)
   <%= f.submit %>
 <% end %>
 ```
-````
+```
 undefined method `tweets_path' for #<#<Class:0x00007f1e7c6ea9c8>:0x00007f1e7c3db1b0>
 ```
 
