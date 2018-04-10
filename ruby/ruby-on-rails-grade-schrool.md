@@ -356,3 +356,25 @@ end
 ```
 
 `@tweets.each` で要素を loop して表示する
+
+![tweet](https://raw.githubusercontent.com/mitakalab/wiki/master/screenshots/rails/rails-16.png)
+
+## 補足
+
+ルーティングは一般的に
+
+```ruby
+resources :tweets
+```
+
+と書き、 いい感じにルーティングを生成してくれる
+
+```ruby
+get 'tweets' => 'tweets#index'
+get 'tweets/:id' => 'tweets#show'
+get 'tweets/new' => 'tweets#new'
+get 'tweets/:id/edit' => 'tweets#edit'
+post 'tweets' => 'tweets#create'
+put 'tweets' => 'tweets#update'
+delete 'tweets' => 'tweets#destroy'
+```
