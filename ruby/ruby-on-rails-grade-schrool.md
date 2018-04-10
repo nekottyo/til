@@ -334,3 +334,25 @@ end
 ```
 
 `tweets/new` で post すると `tweets/index` に redirect される
+
+# tweet 一覧表示
+
+`app/controllers/tweets_controller.rb`
+```ruby
+def index
+  @tweets = Tweet.all
+end
+```
+
+`Tweet.all` で model 全体取得
+
+`app/views/tweets/index.html.erb`
+
+```erb
+<% @tweets.each do | tweet | %>
+    <h1><%= tweet.title %></h1>
+    <p><%= tweet.context %></p>
+<% end %>
+```
+
+`@tweets.each` で要素を loop して表示する
