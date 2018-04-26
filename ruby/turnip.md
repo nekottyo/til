@@ -13,14 +13,20 @@ turnip を調べると食べ物の名前がいっぱい出てくるので整理
 - Turnip(カブ)
   - Cucumber 派生で、Cucumber のイケてないところを強くしたやつ
   - Graken 使う
-  - 日本語で書ける
+  - 日本語DSLで書ける
   - https://github.com/jnicklas/turnip
 - Spinach(ほうれん草)
   - Gherkin で動く BDD フレームワーク
   - Cucmber と比較して、Step のメンテナンス性や再利用性を重視している
-  - 日本語で書けない
+  - 日本語DSLで書けない
   - GitLab で使ってる
   - https://github.com/codegram/spinach
+- Capibara
+  - UI テストのためのフレームワーク
+  - form に値を入れたりボタン押したりできる
+  - Driver が必要(headlesschrome とか)
+  - https://github.com/teamcapybara/capybara
+
 
 Ruby の テスト界隈食べ物好きすぎなのでは...
 
@@ -42,6 +48,7 @@ Gemfile に足す
 gem 'turnip'
 gem 'rspec-rails'
 gem 'database_rewinder'
+gem 'selenium-webdriver'
 ```
 install
 ```
@@ -55,17 +62,23 @@ bundle exec rails generate rspec:install
 
 
 feature を書く
-```
-cat spec/features/tweet.feature
+
+ここではユーザがやることを自然言語的に記述する
+
+```ruby
 Feature: ユーザは Tweet を投稿できる
 
-   @tweet
-   Scenario: タイトルとコンテキストを入力しツイートできること
-       When ユーザが new にアクセスする
-       And タイトルとコンテキストを入力してツイートボタンを押す
-       Then 内容が表示されていること
+    @tweet
+    Scenario: タイトルとコンテキストを入力しツイートできること
+        When ユーザが new にアクセスする
+        And タイトルとコンテキストを入力してツイートボタンを押す
+        Then タイトルが表示されていること
+        And コンテキストが表示されていること
+
 ```
-叩く 
+
+`rspec` を叩いてみる
+
 ```
 ruby-on-rails-grade-school> bundle exec rspec
 *
@@ -81,7 +94,72 @@ Finished in 0.00167 seconds (files took 0.07154 seconds to load)
 1 example, 0 failures, 1 pending
 ```
 
+step がないので pending になる。
+
+step を書く。  
+`visit` や `fill_in` などは capybara で使えるもの。
+
+```ruby
+steps_for :tweet do
+ step 'ユーザが new にアクセスする' do
+   visit '/tweets/new'
+ end
+
+ step 'タイトルとコンテキストを入力してツイートボタンを押す' do
+   fill_in 'tweet[title]', with: 'turnip test'
+   fill_in 'tweet[context]', with: 'my first turnip!'
+   click_button 'Create Tweet'
+ end
+
+ step 'タイトルが表示されていること' do
+   expect(page).to have_content 'turnip test'
+ end
+
+ step 'コンテキストが表示されていること' do
+   expect(page).to have_content 'my first turnip!'
+ end
+end
+```
+
+Capybara の setup
+
+spec/support/capybara.rb
+```ruby
+require 'capybara/rspec'
+require 'selenium-webdriver'
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app,
+                                 browser: :chrome,
+                                 desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
+                                   chrome_options: {
+                                     args: %w[window-size=1680,1050]
+                                   }
+                                 ))
+end
+
+Capybara.javascript_driver = :selenium
+```
+
+
+実行する
+
+```
+ruby-on-rails-grade-school> bundle exec rspec
+
+ユーザは Tweet を投稿できる
+ タイトルとコンテキストを入力しツイートできること
+   When ユーザが new にアクセスする -> And タイトルとコンテキストを入力してツイートボタンを押す -> Then タイトルが表示されていること -> And コンテキストが表示されていること
+
+Finished in 0.19353 seconds (files took 1.09 seconds to load)
+1 example, 0 failures
+```
+
+:tada: :tada: :tada:
+
+
 
 # 参考
 - http://ukstudio.jp/posts/2011/07/02/bdd/
 - https://qiita.com/shunhikita/items/d02cc313496e26bb69e1
+- https://github.com/willnet/capybara-readme-ja
