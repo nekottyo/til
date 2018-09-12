@@ -48,5 +48,4 @@ From: https://github.com/osx-cross/homebrew-avr/blob/master/avr-gcc.rb
  ~> brew switch avr-gcc 8.2.0
 ```
 
-すると firmware を焼けるようになる。
-
+すると firmware を焼けるようになる
