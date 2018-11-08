@@ -181,3 +181,16 @@ https://github.com/yahoo/athenz
 
 - Garm
 
+
+# Usernetes: Kubernetes installable under $HOME, without the root privileges- AkihiroSuda
+
+https://github.com/rootless-containers/runrootless
+
+- rootless-container
+    - コンテナの中では root で動くが、実行環境としては rootless
+    - apk add とかも使える
+
+# kubernetes/sig-docs-jaについて - CS_Toku
+# Ingress-GCEとバグの話 - tjun
+# たとえば Role を自動生成する - muni
+# ConfigMap と Secret 実装差異 - potsbo
