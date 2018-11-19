@@ -1,7 +1,7 @@
 shellscript の中で stderr だけ使いたい
 =====
 
-さらに、stderr の内容はそのまま stdout に吐きつつ journald にも記録させたいとき
+さらに、stderr の内容はそのまま吐きつつ journald にも記録させたいとき
 
 
 ```bash
