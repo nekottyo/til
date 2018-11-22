@@ -44,6 +44,7 @@ https://speakerdeck.com/superbrothers/kubecon-plus-cloudnativecon-china-2018-rec
 
 ## いま話題のいろいろなコンテナランタイムを比較してみた (Comparison of several container runtimes) @TokunagaKohei
 
+- https://www.slideshare.net/KoheiTokunaga/ss-123664087
 - critools でパフォーマンス測定
     - 作成から破棄までのライフサイクル
 
