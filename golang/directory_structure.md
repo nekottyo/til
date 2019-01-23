@@ -7,7 +7,7 @@ Golang directory structure
     - https://github.com/katzien/talks/blob/master/how-do-you-structure-your-go-apps/londongophers-2018-09-19/slides.pdf
         - Flat structure
             - 全部 root に置く
-            - fiel 増えると死ぬ
+            - file 増えると死ぬ
         - Layerd
             - いわるゆ MVC 的な使い方
         - Modular
