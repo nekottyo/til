@@ -2,6 +2,7 @@ static link な binary を build する
 =====
 
 https://github.com/golang/go/issues/26492#issuecomment-435462350
+(Go 1.13 からは `go build -static` でよくなるかも?)
 
 
 基本的には `-tags netgo -ldflags '-extldflags "-static"'` があれば良さそう。
