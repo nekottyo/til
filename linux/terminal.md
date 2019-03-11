@@ -5,7 +5,8 @@ terminal emulator 選び
 # terminator
 
 https://github.com/albfan/terminator
-theme: https://github.com/EliverLara/terminator-themes/blob/af6ec7a1a72963d301dfd0e71b338d8cb1e2e473/images/Broadcast.png
+
+![img](https://raw.githubusercontent.com/EliverLara/terminator-themes/af6ec7a1a72963d301dfd0e71b338d8cb1e2e473/images/Broadcast.png)
 
 めちゃめちゃに使いやすい。copy on select が focus 外さないでも使える
 
@@ -34,6 +35,7 @@ https://github.com/jwilm/alacritty
 GPU Accelareted。
 
 フォントサイズ Up/Down のキーバインドが、config ファイルを共有する場合 Mac/Linux でうまくいかない(Mac は Command だが, Linux は Ctrl)
+</br>
 ssh 経由だと表示が崩れる。ダブルクリックでの copy on select が不発するときが多い。
 
 # kitty
