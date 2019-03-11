@@ -11,7 +11,7 @@ https://github.com/albfan/terminator
 めちゃめちゃに使いやすい。copy on select が focus 外さないでも使える
 
 
-```toml
+```conf
   [[default]]
     background_color = "#2b2b2b"
     background_darkness = 0.92
