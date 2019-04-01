@@ -11,10 +11,10 @@ https://www.telepresence.io/
 
 - telepresence
     - telepresence が pod を hook して local に捻じ曲げる
-    - 1 pot が local マシンに置き換わる
+    - 1 pod が local マシンに置き換わる
 - build/push/ship が省ける
     - local で docker 上げるみたいなのがいらない
-    - telepresence が k8s の一部として動くの得、ネットワーク経路が同じににある
+    - telepresence が k8s の一部として動くので、ネットワーク経路が同じににある
 - require
     - http(s)
 - local で起動したり docker コンテナでとして起動したり
