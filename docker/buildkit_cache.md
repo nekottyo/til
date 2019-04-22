@@ -49,5 +49,7 @@ $ docker build .
  => [npm 4/4] RUN --mount=type=cache,target=/app/node_modules     npm install                                                      15.1s
 ```
 
-
 BuildKit 最高！！
+
+
+`COPY --from=` で `target=/app/node_modules` を引っ張ってもコンテナ側の image には乗っていないので何も copy 出来ないことに注意
