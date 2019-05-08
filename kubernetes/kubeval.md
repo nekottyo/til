@@ -1,0 +1,11 @@
+kuveval
+=====
+
+https://github.com/instrumenta/kubeval
+
+> kubeval is a tool for validating a Kubernetes YAML or JSON configuration file. It does so using schemas generated from the Kubernetes OpenAPI specification, and therefore can validate schemas for multiple versions of Kubernetes.
+
+
+```
+$ kubeval manifests/*.yaml
+```
