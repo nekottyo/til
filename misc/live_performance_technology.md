@@ -1,8 +1,10 @@
 # 「ライブパフォーマンス×テクノロジー」 design thinking < creative action!
 
 https://techplay.jp/event/753195
-
 2019/11/07 @TECH PLAY 渋谷
+
+twitter: https://twitter.com/hashtag/sight?src=hashtag_click
+
 
 
 - 真鍋大度 @Rhizomatiks
