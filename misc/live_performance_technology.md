@@ -9,14 +9,13 @@ twitter: https://twitter.com/hashtag/sight?src=hashtag_click
 
 - 真鍋大度 @Rhizomatiks
     - https://www.youtube.com/channel/UCg_m3Y7A_K12cvIDNxzhH4A
-- MIKIKO - 演出振付家
+- MIKIKO - 演出振付家, ELEVENPLAY, Perfume, BABYMETAL
 
 - エンジニアと振付家/ダンサーとのコミュニケーションは?
     - ライゾマは音楽に長けた人が多い
         - ビデオコンテを渡すことが多い
             -  iMovie 使ってる
         - ライゾマとダンサーの橋渡しをしている
-
 - レクサスの展示
     - https://www.daito.ws/work/lexus-leading-with-light.html
     - 照明256, 台車6台
@@ -29,13 +28,12 @@ twitter: https://twitter.com/hashtag/sight?src=hashtag_click
         - ドローンの振り付けもするので、ダンサーとのシンクロ率が高い
         - ドローンにマーカーをつけて、センサー で場所, 角度を出す
             - 外でやるのは GPS
-        - ドローンの動き > ダンサーの動き > ダンスのときのドローンの色とか点滅 の振り付けをしてる
+        - ドローンの動き > ダンサーの動き > ダンスのときのドローンの色とか点滅 の順で振り付け
 - 最初はできるネタを出して、MIKIKO 先生にインスピレーションを起こしてもらう
     - 最初のでもは技術的に可能なこととこを動画とかで見せる
     - 使ってもらえないネタもある
     - システムが安定してきたら CG ソフトとかで作るけど最初からではない
 - その場で色々変更するのでダンサーが集まっても何もやらない日とかもある
-
 - ライゾマはハードとコンピュータビジョンが強い
     - 室内で既製品で24台のドローンを制御しようとすると今でも難しい
     - 屋外の GPS 制御はそこそこ
@@ -45,9 +43,8 @@ twitter: https://twitter.com/hashtag/sight?src=hashtag_click
     - https://www.youtube.com/watch?v=-xIx9DIgI9o
     - WHEEL の制御も作ってた
         - https://whill.jp/
-    - ダンサーとどうコミュニケーション?
-        - border は
-        - 頭の中でカウントしながら踊れる
+    - ダンサーとどうコミeュニケーション?
+        - Perfume, ELEVENPLAY は頭の中でカウントしながら踊れる
             - どののタイミングで柱がどこにあるかみたいなのも覚えている
             - 舞台装置とダンサーはセット
 - Perfume も ELEVENPLAY も毎回同じ動きができるから成り立っている
