@@ -111,8 +111,8 @@ twitter: https://twitter.com/hashtag/sight?src=hashtag_click
         - MRI, Brain decoding
             - https://researchmap.jp/y_kamitani/?lang=english
             - 脳の活動から見ている映像を再現する
-            - 音を聞いて映像を再現する, ダンスを考えていれば映像になる
-            - 無声映画を見て音楽をつける
+            - 音を聞いて映像を再現する, ダンスを考えていれば映像になる未来
+            - 無声映画を見て音楽をつける未来
             - 脳に電気信号を与える(言語野を刺激して言葉が出にくくなるとか)
 
 次回: https://techplay.jp/event/join/756734
