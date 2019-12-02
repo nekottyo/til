@@ -23,3 +23,10 @@ for i in jira.search_issues('project=YOUR PROJECT and status != "To Do" and stat
     time.sleep(0.5)
 
 ```
+---
+参考
+- https://jira.readthedocs.io/en/master/examples.html#transitions
+- https://jira.readthedocs.io/en/master/examples.html#searching
+- https://stackoverflow.com/questions/19945179/is-it-possible-to-change-jira-issue-status-with-python-jira/19945470
+- https://ja.confluence.atlassian.com/jirakb/using-not-equals-on-a-resolution-does-not-return-unresolved-issues-635897091.html
+
