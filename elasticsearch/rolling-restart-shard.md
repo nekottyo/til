@@ -24,3 +24,42 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-cluster.
 - `cluster.routing.allocation.node_concurrent_recoveries`
 - `cluster.routing.allocation.node_initial_primaries_recoveries`
 - `cluster.routing.allocation.cluster_concurrent_rebalance`
+
+ex
+```console
+$ curl -s 0:9200/_cluster/settings | jq . 
+{
+  "persistent": {
+    "action": {
+      "search": {
+        "shard_count": {
+          "limit": "10000"
+        }
+      }
+    },
+    "cluster": {
+      "routing": {
+        "allocation": {
+          "cluster_concurrent_rebalance": "50",
+          "node_concurrent_recoveries": "50",
+          "node_initial_primaries_recoveries": "100"
+        }
+      }
+    },
+    "indices": {
+      "recovery": {
+        "max_bytes_per_sec": "200mb"
+      }
+    }
+  },
+  "transient": {
+    "cluster": {
+      "routing": {
+        "allocation": {
+          "enable": "all"
+        }
+      }
+    }
+  }
+}
+```
