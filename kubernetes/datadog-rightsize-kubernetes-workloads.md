@@ -8,9 +8,9 @@ https://www.datadoghq.com/blog/rightsize-kubernetes-workloads/
 
 ## Kubernetes スケジューラ
 
-Kubernetes scheduler は、クラスタ内のどこに Pod を配置するかを決定する際、 Pod のリソースリクエストを考慮する。例えば、コンテナの要求を満たすのに十分なリソースが無いノードには Pod をスケジュールしない。
+Kubernetes scheduler は、クラスタ内のどこに Pod を配置するかを決定する際、 Pod のリソースリクエストを考慮する。例えば、コンテナの要求を満たすのに十分なリソースが無いノードには Pod をスケジュールしないような動きを取る。
 
-1 つの Node に 2 つの CPU コアがある状況を考える。
+例として、1 つの Node に 2 つの CPU コアがある状況を考える。
 
 ![](./images/1.png)
 
@@ -19,23 +19,26 @@ Kubernetes scheduler は、クラスタ内のどこに Pod を配置するかを
 ![](./images/2.png)
 
 この状況では、0.5 コア未満の Pod がクラスタにデプロイされるまで使用されることはない。
-一方で、この Pod が実際に使用するリソースは 0.5 コアであった場合、1.5 コアスケジュール不可能な CPU リソースが生まれる事になる。
+Pod が実際に使用するリソースは 0.5 コアしかない場合、1.5 コア分のスケジュール不可能な CPU リソースが生まれる事になる。
 
 ![](./images/3.png)
 
-これにより、最終的にはより多くの/大きなノードが必要となり、コストが増加する。
-このため、コンテナに対して適切な量の CPU と Memory を割り当てることは、コストを削減するために重要である。
+このような状況が多数のノードで発生すると、最終的にはより多くの/大きなノードが必要となり、コストが増加原因となる。
+
+
+よって、コンテナに対して適切な量の CPU と Memory を割り当てることがコストを削減するために重要である。
 
 ## 適切なサイジング
 ### 新しいサービスのリソース要件を見積もる
 
 初めて運用環境にデプロイされる新しいサービスの場合、実際の運用で必要となるリソース量を見積もることは難しい。
+このような場合、最初のステップではアプリケーションコードに基づいてサンプル入力でベンチマークを行うことである。この取り組みに最適な人材はサービス開発をしている人である。
 
-このような場合、最初のステップではアプリケーションコードに基づいてサンプル入力でベンチマークを行うことである。この取り組みに最適な人災はサービス開発をしている人である。
+最初はコンポーネントごとにベンチマークを行い、その後、e2e でのベンチマークを行う。事前に大まかな予測を立てることで、ビジネス目標を達成することに役立つ場合がある。
+例えば、パフォーマンスが悪い場合サービスのコストが高くなりすぎる可能性がある。
 
-最初はコンポーネントごとにベンチマークを行い、その後、e2e でのベンチマークを行う。事前に大まかな予測を立てることで、ビジネス目標を達成することに役立つ場合がある。例えば、パフォーマンスが悪い場合サービスのコストが高くなりすぎる可能性がある。
-
-この最初のリソース推定は、サービスに必要と思われる以上の量をリクエストすることがよい。必要以上に少ない CPU はスロットリングを起こし、少ない Memory は OOM を引き起こす可能性がある。
+この最初のリソース推定は、サービスに必要と思われる以上の量をリクエストすることが一般的である。
+必要以上に少ない CPU はスロットリングを起こし、少ない Memory は OOM を引き起こしサービスに悪影響を及ぼす可能性がある。
 
 ### リソース最適化
 #### Kubernetes Vertial Pod Autoscaler
@@ -43,10 +46,12 @@ Kubernetes scheduler は、クラスタ内のどこに Pod を配置するかを
 
 しかし、VPA は過去の metrics から将来のリソース使用量を予測するため、CPU や Memoroy の使用率が安定しているワークロードには機能するが、使用率が定期的に急増、 低下するようなワークロードにはうまく機能しない。これは自分で recommender を実装すれば回避できる可能性がある。
 
-また、 VPA は Horizontal Pod Autoscaler(HPA) の CPU, Memory スケーリングとの併用は推奨されておらず、External Metrics によるスケーリングのみ併用可能である[^vpa-limitation]。
 
-Google Kubernetes Engine(GKE) では、[Multi Pod Autoscaler](https://cloud.google.com/kubernetes-engine/docs/how-to/multidimensional-pod-autoscaling) という機能があり、これは、VPA と HPA を併用することで、CPU, Memory 両方のスケーリングを行うことができる。
-これの OSS 版として、2024/01/16 現在、[AEP-5342: Multi-dimensional Pod Autoscaler](https://github.com/kubernetes/autoscaler/blob/master/multidimensional-pod-autoscaler/AEP.md) が提案されている[^multi-dimensional-pod-ausoscaler]。
+> [!NOTE]
+> VPA は Horizontal Pod Autoscaler(HPA) の CPU, Memory スケーリングとの併用は推奨されておらず、External Metrics によるスケーリングのみ併用可能である[^vpa-limitation]。
+> 
+> Google Kubernetes Engine(GKE) では、[Multi Pod Autoscaler](https://cloud.google.com/kubernetes-engine/docs/how-to/multidimensional-pod-autoscaling) という機能があり、これは、VPA と HPA を併用することで、CPU, Memory 両方のスケーリングを行うことができる。
+> これの OSS 版として、2024/01/16 現在、[AEP-5342: Multi-dimensional Pod Autoscaler](https://github.com/kubernetes/autoscaler/blob/master/multidimensional-pod-autoscaler/AEP.md) が提案されている[^multi-dimensional-pod-ausoscaler]。
 
 [2023年の Datadog による調査](https://www.datadoghq.com/container-report/) では、VPA を導入している企業は顧客の 1% 程度であり、2021 年の調査と比較して横ばいである[^datadog-vpa-report] 。
 
