@@ -15,7 +15,7 @@ https://twitter.com/search?f=tweets&q=%23gorillavim&src=typd&lang=ja
     - Modes
         - Normal, Insert, Visual
     - Operator
-        - d,y : operator は2回叩くと行志向になる
+        - d,y : operator は 2 回叩くと行志向になる
     - 変更と繰り返し
         - .
         - u
@@ -34,8 +34,8 @@ https://twitter.com/search?f=tweets&q=%23gorillavim&src=typd&lang=ja
 
 https://docs.google.com/presentation/d/1uNouaZOLsYDwtaFBGhWdX4u1V-9uWWWqX7U2gl_Ou3k/edit#slide=id.p
 
-- 社内 vim slack があるけど活発じゃない...
-    - 実践Vim 読書会
+- 社内 vim slack があるけど活発じゃない。..
+    - 実践 Vim 読書会
         - 1H 会議室
             - 目次を眺めて、読む場所決めて、時間まで読みながら雑談
     - `'`,  で戻れる
@@ -57,7 +57,7 @@ https://speakerdeck.com/mtsmfm/vscodevim-is-also-vim
 
 # mastering vim という本について @okuramasafumi
 
-- ユースケース別(機能別ではない)
+- ユースケース別（機能別ではない）
 - ぷらぎん豊富
 - `:arg` であとから引数を足せる
 

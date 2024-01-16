@@ -8,7 +8,7 @@ Pod が OpenMetrics(Prometheus) 形式で metrics export してくれている�
 
 ## 基本的な書き方
 https://docs.datadoghq.com/ja/agent/kubernetes/prometheus/
-pod annotation に`ad.datadoghq.com/<CONTAINER NAME>.*` を基本として埋める
+pod annotation に `ad.datadoghq.com/<CONTAINER NAME>.*` を基本として埋める
 実際には deployment とか StateFullSets とかの `spec.template.metadata.annotations` に書くことになると思う
 
 ```yaml
@@ -27,7 +27,7 @@ pod annotation に`ad.datadoghq.com/<CONTAINER NAME>.*` を基本として埋め
             ]            
 ```
 ここの `CONTAINER_IDENTIFIER` は `spec.template.spec.containers.name` と一致させる必要がある
-`check_names` は DD integration の名前なので `openmetrics` 固定(ほかに integration 入れるなら足す 
+`check_names` は DD integration の名前なので `openmetrics` 固定（ほかに integration 入れるなら足す 
 ```yaml
         ad.datadoghq.com/<CONTAINER_IDENTIFIER>.check_names: |
                         ["openmetrics"]
@@ -78,8 +78,8 @@ metrics mutation したい場合は mapping を書く
 
 ## Advanced
 
-また、OpenMetrics 側で、例えば `hoo{name="hoge"}` みたいな metrics を投げていて、DD agent がつける `name` (ここでは EC2 の instance name の `name`) と conflict するような場合、`labels_mapper` で label 側を 張り替えれる。
-2つ tag (label) がついていると、sum() とか rollup とかがうまく動かないので極力 ばらしたほうが良い。
+また、OpenMetrics 側で、例えば `hoo{name="hoge"}` みたいな metrics を投げていて、DD agent がつける `name` (ここでは EC2 の instance name の `name`) と conflict するような場合、`labels_mapper` で label 側を張り替えれる。
+2 つ tag (label) がついていると、sum() とか rollup とかがうまく動かないので極力ばらしたほうが良い。
 
 例えば `hoge{name="bar"}` の metrics を吐いていた場合以下のような config は DD 上では
 `foo.hoge{app_name="bar}` として投げられる。

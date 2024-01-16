@@ -185,7 +185,7 @@ for c in cluster1 cluster2; do
 done
 ```
 
-cluster 設定を 両方に戻すと
+cluster 設定を両方に戻すと
 
 ```sh
 $ kubectl -n test-namespace patch federatednamespaceplacement test-namespace \

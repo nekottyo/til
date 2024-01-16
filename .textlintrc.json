@@ -17,7 +17,9 @@
          "allow": ["か"]
       }
     },
-    "preset-jtf-style": true,
+    "preset-jtf-style": {
+      "3.1.1.全角文字と半角文字の間": false
+    },
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
         "space": "always",

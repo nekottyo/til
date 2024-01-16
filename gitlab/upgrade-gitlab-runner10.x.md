@@ -14,8 +14,8 @@ https://docs.gitlab.com/runner/install/linux-repository.html
 # curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | sudo bash
 # yum install gitlab-runner
 ```
-9.x で install されていた`/etc/systemd/system/gitlab-runner.service` の unit file まできれいに消されるので install コマンドで再生成する  
-9.x までは default installすると directory が /home/gitlab-runner, user も gitlab-runner なので合わせる(無指定だと /home/admin, root になる)
+9.x で install されていた `/etc/systemd/system/gitlab-runner.service` の unit file まできれいに消されるので install コマンドで再生成する  
+9.x までは default install すると directory が /home/gitlab-runner, user も gitlab-runner なので合わせる（無指定だと /home/admin, root になる）
 ```
 # gitlab-runner install -u gitlab-runner -d /home/gitlab-runner
 ```

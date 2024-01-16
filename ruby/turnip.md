@@ -4,35 +4,35 @@ Turnip
 # はじめに
 turnip を調べると食べ物の名前がいっぱい出てくるので整理
 
-- Cucumber(きゅうり)
-  - BDDテストフレームワーク
+- Cucumber(きゅうり）
+  - BDD テストフレームワーク
   - https://github.com/cucumber/cucumber
-- Gherkin(きゅうりのピクルス)
+- Gherkin(きゅうりのピクルス）
   - cucumber 等で使う言語
   - https://github.com/codegram/gherkin-ruby
-- Turnip(カブ)
+- Turnip(カブ）
   - Cucumber 派生で、Cucumber のイケてないところを強くしたやつ
   - Graken 使う
-  - 日本語DSLで書ける
+  - 日本語 DSL で書ける
   - https://github.com/jnicklas/turnip
-- Spinach(ほうれん草)
+- Spinach(ほうれん草）
   - Gherkin で動く BDD フレームワーク
   - Cucmber と比較して、Step のメンテナンス性や再利用性を重視している
-  - 日本語DSLで書けない
+  - 日本語 DSL で書けない
   - GitLab で使ってる
   - https://github.com/codegram/spinach
 - Capibara
   - UI テストのためのフレームワーク
   - form に値を入れたりボタン押したりできる
-  - Driver が必要(headlesschrome とか)
+  - Driver が必要（headlesschrome とか）
   - https://github.com/teamcapybara/capybara
 
 
-Ruby の テスト界隈食べ物好きすぎなのでは...
+Ruby のテスト界隈食べ物好きすぎなのでは。.。
 
 ## BDD: Behavior Driven Development
 
-TDD(テスト駆動開発)から派生。振る舞い(仕様)や制約条件を記述する。自然言語に近い形で記述。  
+TDD(テスト駆動開発）から派生。振る舞い（仕様）や制約条件を記述する。自然言語に近い形で記述。  
 利用者目線でシナリオを書いてシステムに対してテストを行う。
 
 

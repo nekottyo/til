@@ -16,7 +16,7 @@ https://k8sjp.connpass.com/event/104450/
 - Quipper SRE
     - 東京 3
     - マニラ 1
-    - ロンドン1
+    - ロンドン 1
 
 - Kubernetes への移行
     - CTO のトップダウンで移行が始まった
@@ -26,18 +26,18 @@ https://k8sjp.connpass.com/event/104450/
 - Quipper
     - 2012~ heroku
     - 2018/02~ Deis Workflow(Deis v2)
-    - 2018/08~ Kubernetes(本番も)
+    - 2018/08~ Kubernetes(本番も）
 
 - モチベーション
     - Deis が EOS
     - Deis V2 は k8s 上で動いてるのでそれほど苦じゃない
-    - fork された Hephy もあったが...
+    - fork された Hephy もあったが。..
         - Deis Workflow は k8s のラッパー定期位置づけ
         - 機能が足りない部分もあった
 
 - 移行の流れ
     - Dockerfile
-        - Heroku Buildpackだからそんな難しくない
+        - Heroku Buildpack だからそんな難しくない
         - Twelve Factor App だから難しくない
     - Monorepo 化
         - subtree で入れてった
@@ -58,15 +58,15 @@ https://k8sjp.connpass.com/event/104450/
 
 - monorepo
     - サービスのほぼ全てを含むアプリケーションコード
-    - アプリケーションに近い部分は SRE から開発者に移譲(nginx の設定とか)
+    - アプリケーションに近い部分は SRE から開発者に移譲（nginx の設定とか）
 
 - cluster 構成
-    - production は 1つ
+    - production は 1 つ
     - staging
-        - develop: develop branch用 cluster
+        - develop: develop branch 用 cluster
         - release: release branch 用
         - pr-XXX: PR を作るたびに生成される
-        - branch-router という pod (ngnx?) をおいて、各namespace にルーティングさせる
+        - branch-router という pod (ngnx?) をおいて、各 namespace にルーティングさせる
 
 - 課題
     - クラスタの継続アップデート
@@ -76,7 +76,7 @@ https://k8sjp.connpass.com/event/104450/
 
 
 - 質疑
-    - k8s cluster を世代管理したのは?
+    - k8s cluster を世代管理したのは？
         - EKS に Tokyo region がない
         - kube-aws を使ってるから
 
@@ -91,7 +91,7 @@ https://nulab-inc.com/ja/blog/cacoo/cacoo-microservices-with-kubernetes/
 
 - 課題
     - モノリシックなアプリケーション
-        - 1アプリ1インスタンス
+        - 1 アプリ 1 インスタンス
         - build/deploy が大変
         - 依存関係が強い
     - EOS なライブラリ
@@ -101,13 +101,13 @@ https://nulab-inc.com/ja/blog/cacoo/cacoo-microservices-with-kubernetes/
     - 部分的な変更が容易
     - リソース最適化
     - 疎結合
-    - 目標: "変更を容易に"
+    - 目標： "変更を容易に"
 
 - 方針
     - オーナーシップ
     - 小さいほどよい
     - スクラッチ
-    - サービス間は強い片付け. protocol buffers
+    - サービス間は強い片付け。 protocol buffers
     - 開発環境はサービスごとに自由
 
 - Backend/Middleware
@@ -146,7 +146,7 @@ https://nulab-inc.com/ja/blog/cacoo/cacoo-microservices-with-kubernetes/
 
 - Protocol Buffers
     - サービス間の型定義
-    - 1つのレポジトリで管理
+    - 1 つのレポジトリで管理
     - 各レポジトリで submodule
     - gRPC でやりとり
 
@@ -160,7 +160,7 @@ Yahoo
 
 https://github.com/yahoo/athenz
 
-- 大規模なOpenStack
+- 大規模な OpenStack
 - Kubernetes as a Service, PaaS 両方
 - めっちゃ cluster ある
 

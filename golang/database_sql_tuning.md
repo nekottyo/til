@@ -3,7 +3,7 @@ database/sql のチューニング
 
 # 前提
 
-DataBase は connection pool を持っている(idle and open connection)。
+DataBase は connection pool を持っている（idle and open connection)。
 
 SQL の実行などの DB タスクを実行する時、connection は open connection としてマークされ、タスクが終わると idle connection に戻る。
 
@@ -23,7 +23,7 @@ idle connection が connection pool に無い場合は、 Go は新しいコネ�
 
 - connection を再利用できるため、メモリ効率が良くなり、allocate 回数が減る
 - idle connection を維持する事自体もメモリを消費するため、単純に大きくすればいいというわけではない
-	- コネクションが正常ではなくなった場合、Go は接続を2回試してだめだったら connection pool から削除して新しく connection を作るが、`MaxIdleConns` が大きかった場合より大きなリソースを消費する可能性がある
+	- コネクションが正常ではなくなった場合、Go は接続を 2 回試してだめだったら connection pool から削除して新しく connection を作るが、`MaxIdleConns` が大きかった場合より大きなリソースを消費する可能性がある
 	- `MaxIdleConns <= MaxOpenConns` にする必要がある
  
 # `SetMaxOpenConns`

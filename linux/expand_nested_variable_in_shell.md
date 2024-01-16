@@ -3,7 +3,7 @@ shell でネストされた変数を展開したい
 
 # 問題
 
-例えばRuby の bundle install 時に、 development なら `bundle install --without development` で、
+例えば Ruby の bundle install 時に、 development なら `bundle install --without development` で、
 production なら `bundle install --without development:test` みたいなことをやりたい。
 
 ```bash

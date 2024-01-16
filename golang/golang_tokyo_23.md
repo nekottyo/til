@@ -29,7 +29,7 @@ https://speakerdeck.com/mom0tomo/golang-tokyo-go-tools
 - test 周り
     - `testing`
     - `_test.go` は build 時には使われない
-    - Table Driven Testいいぞ
+    - Table Driven Test いいぞ
 
 # Delveを用いたデバッグ & pprofを用いたプロファイリング / 渡邉 光
 

@@ -5,7 +5,7 @@
 ツール (ちょっとした ShellScript) を作ってる時に利用者の実行環境を縛れないケースのあるあるだと思うが、特に Mac はデフォルト BSD コマンドなので自分環境では動くけど他人にやらせたら実行できないみたいなのがある。
 なのでそれを事前に検出して潰したい。
 
-Golang で作って goreleaser とかで multi arch build すりゃいいじゃん?というのはそれはそうで、HomeBrew/LinuxBrew 用に Fomula 合わせて更新していくみたいなのが筋がいいとは思っている 。
+Golang で作って goreleaser とかで multi arch build すりゃいいじゃん？というのはそれはそうで、HomeBrew/LinuxBrew 用に Fomula 合わせて更新していくみたいなのが筋がいいとは思っている 。
 用意が面倒。
 
 あとは試してないけど Docker image に包んで multi-arch で配るのも考えられる。

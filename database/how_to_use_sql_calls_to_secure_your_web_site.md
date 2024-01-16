@@ -3,7 +3,7 @@
 
 # 静的プレースホルダ
 
-JIS/ISO では "準備された文(Prepared Statement)" と定義される。
+JIS/ISO では "準備された文（Prepared Statement)" と定義される。
 DB 側にプレースホルダのまま文を送り、実行時に SQL パラメータを DB に送信し、DB 側がバインド処理する。
 SQL の準備段階で SQL 構文が確定するため後から SQL 文が変化することがないため安全である。
 

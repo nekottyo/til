@@ -1,7 +1,7 @@
 Dockerize で依存コンテナを待つ
 ===
 
-[dockerize](https://github.com/jwilder/dockerize) を使うと、他のコンテナのポートが listen するまでコマンド(CMD)を叩かない、ということが簡単に実現できる
+[dockerize](https://github.com/jwilder/dockerize) を使うと、他のコンテナのポートが listen するまでコマンド（CMD)を叩かない、ということが簡単に実現できる
 
 Dockerfile
 ```Dockerfile

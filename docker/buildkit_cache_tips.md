@@ -2,9 +2,9 @@ BuildKit `--mount-type=cache` の Tips
 =====
 
 # COPY `--from` 問題
-Multi Stage Build で`target=/hoge` の path の先を COPY  で引っ張ろうとすると虚無なので注意が必要
+Multi Stage Build で `target=/hoge` の path の先を COPY  で引っ張ろうとすると虚無なので注意が必要
 
-つまり 成果物は cache できない
+つまり成果物は cache できない
 
 
 

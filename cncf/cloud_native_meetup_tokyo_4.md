@@ -23,7 +23,7 @@ Cloud Native Meetup Tokyo #4
     - performance, L4/L8 network proxy, pluggable filter chain model
     - master is always RC
         - Lyft とか couple は weekly くらいでデプロイされているらしい
-    - Envoy のtaggingはあまり気にしなくていいよ
+    - Envoy の tagging はあまり気にしなくていいよ
     - Place to watch
         - `DEPLICATED.md`
         - What happend
@@ -36,26 +36,26 @@ Cloud Native Meetup Tokyo #4
     - xDS
         - LDS Listener Discovery Service
             - 通信を listen したいやつ
-            - 1インスタンスが 1サーバ
+            - 1 インスタンスが 1 サーバ
         - RDS Route Discovery Service
             - HTTP, HTTPS gRPC だけ
             - RDS 毎に異なるサーバから持ってこれる
         - CDS Cluster Discovery Service
             - Cluster の後ろにいるのを探す
-            - 1インスタンスが 1サーバ
+            - 1 インスタンスが 1 サーバ
         - EDS Endopint
             - それぞれの endopoint を envoy に配布するやつ
         - SDS Secret
             - 暗号化通信をするときに秘密鍵と証明書を配布する
-            - 別のルートから 鍵と証明書を配布するしくみ
-            - ingress controller の証明書更新されるとIstio が hot restart していたけど、それが再起動無しで適用できるようになる
+            - 別のルートから鍵と証明書を配布するしくみ
+            - ingress controller の証明書更新されると Istio が hot restart していたけど、それが再起動無しで適用できるようになる
         - HDS Health
             - envoy 同士で health check する
             - envoy 数 * endpoint でめっちゃ増えるのが問題
             - HDS で envoy が見る Endpoint を分けて、HDS で aggregate する
         - Aggregated ADS
             - 複数の xDS をまとめて一貫性をもたせる
-        - UDS Unix Domain Socket(discovery service じゃない)
+        - UDS Unix Domain Socket(discovery service じゃない）
     - 今後
         - L7 プロトコルサポート
         - scalability from improved xDS
@@ -95,7 +95,7 @@ Cloud Native Meetup Tokyo #4
 - UseCase
     - Web-Service: 人事の給与サービス
         - 自分は自分の給与が見れる
-        - manager は 自分と member が見れる
+        - manager は自分と member が見れる
         - 人事は全部見れる
     - Docker
         - docker の authorization plugin として opa を指定できる

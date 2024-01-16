@@ -18,11 +18,11 @@ resource aws_iam_policy_document a {
 }
 ```
 みたいなことをやりたい。
-ユースケースとしては、1の policy json を再利用して複数の policy に紐付けたい時にほしい。
+ユースケースとしては、1 の policy json を再利用して複数の policy に紐付けたい時にほしい。
 
 
 しかし上記の書き方は policy は string (json)なのでうまくいかない。
-また、`data.aws_iam_policy_document` には `source_json` や `override_json` もあるが 各 policy に食わせるように新たに作り直さなきゃいけないのでめんどい。
+また、`data.aws_iam_policy_document` には `source_json` や `override_json` もあるが各 policy に食わせるように新たに作り直さなきゃいけないのでめんどい。
 
 ## 失敗
 ```hcl

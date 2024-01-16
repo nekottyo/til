@@ -25,7 +25,7 @@ https://speakerdeck.com/superbrothers/kubecon-plus-cloudnativecon-china-2018-rec
 - Kubecon Recap
     - CNCF サーベイ
         - 58% の企業が kubernetes を本番利用
-        - そのうち 40% が 5000人移譲の会社
+        - そのうち 40% が 5000 人移譲の会社
     - kubernetes is boring
     - Harbor
         - cloud native registory
@@ -70,16 +70,16 @@ https://speakerdeck.com/superbrothers/kubecon-plus-cloudnativecon-china-2018-rec
     - OCI
     - runc
         - OCI のリファレンス的実装
-        - Linux のリソース分離, セキュリティ機能をフル活用
+        - Linux のリソース分離、 セキュリティ機能をフル活用
         - rootless もある
     - runsc(gVisor)
         - syscall を sentry というプロセスを挟んでハンドルする
-        - 限定的なシステムコールを発行, 50種程度
+        - 限定的なシステムコールを発行、 50 種程度
         - 各アプリケーションは Go routeine として動作
         - スケジューリングも Go のランタイムがやる
     - runnc(Nabla Containers)
         - コンテナランタイム上で unikernel を実行する
-        - systemcall が コンテナランタイムで裁く
+        - systemcall がコンテナランタイムで裁く
         - 突き抜けるのも 7 種類しかない
         - unikernel ベースの image が実行可能
     - kata-runtime(Kata Containers)
@@ -126,7 +126,7 @@ https://speakerdeck.com/superbrothers/kubecon-plus-cloudnativecon-china-2018-rec
 - https://speakerdeck.com/orisano/multi-stage-builds-patterns-and-practice
 - build 中に test を通す
 - base image に alias を貼る
-- 重い処理を 分けて cache を効かせる
+- 重い処理を分けて cache を効かせる
 - CI に Multistage Build はつらい
 
 ## LT: 中国AlibabaのManaged Containerのあれこれ @mosuke5
