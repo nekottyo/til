@@ -1,0 +1,32 @@
+{
+  "plugins": {},
+  "filters": {
+    "allowlist": true,
+    "comments": true
+  },
+  "rules": {
+    "ja-no-abusage": true,
+    "no-mixed-zenkaku-and-hankaku-alphabet": true,
+    "preset-ja-technical-writing": {
+        "no-exclamation-question-mark": {
+        "allowFullWidthExclamation": true,
+        "allowFullWidthQuestion": true
+      },
+      "no-doubled-joshi": {
+         "strict": false,
+         "allow": ["か"]
+      }
+    },
+    "preset-jtf-style": true,
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "always",
+        "exceptPunctuation": true
+      },
+      "ja-space-around-code": {
+        "before": true,
+        "after": true
+      }
+    }
+  }
+}
