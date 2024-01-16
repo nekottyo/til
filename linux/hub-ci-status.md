@@ -1,7 +1,7 @@
 `hub ci-status -v`
 =====
 
-便利!
+便利！
 
 ```sh
 ➜ hub ci-status -v

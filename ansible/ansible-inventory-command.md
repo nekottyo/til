@@ -2,7 +2,7 @@
 
 inventory file の情報をいい感じに整形して出力してくれるコマンド
 通常の `ansible-*` と同様に `-i` で inventory file 指定や、 `-l` で limit 指定が可能
-inventory が 従来の ini 形式ではなく yaml inventory だったら `-y` をつける。outputも yaml になる
+inventory が従来の ini 形式ではなく yaml inventory だったら `-y` をつける。output も yaml になる
 
 
 [enginyoyen/ansible-best-practises](https://github.com/enginyoyen/ansible-best-practises) を使って試す

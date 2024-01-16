@@ -28,11 +28,11 @@ commandTests:
     expectedOutput: ["Version:.*"]
 ```
 
-- `commandTests`: コマンドを実行して期待する出力, エラー出力で判断
+- `commandTests`: コマンドを実行して期待する出力、 エラー出力で判断
 - `fileExistenceTests` 指定したファイルパスに指定した uid, gid などで配置されているか
 - `fileContentTests` 指定したファイルの中身のテスト
 - `metadataTest`: Docker image のテスト
-  - label がついているか, expose port がただし以下, CMD, WORKDIR がただしいか
+  - label がついているか、 expose port がただし以下、 CMD, WORKDIR がただしいか
 - `globalEnvVars`: 指定した環境変数があるか
 
 

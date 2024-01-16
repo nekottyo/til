@@ -1,6 +1,6 @@
 # api の一括取得数
 
-gitlab api で帰ってくる項目数はdefault で 20 に制限されている
+gitlab api で帰ってくる項目数は default で 20 に制限されている
 
 https://docs.gitlab.com/ee/api/#pagination
 >  Number of items to list per page (default: 20, max: 100)

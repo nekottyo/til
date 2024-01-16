@@ -14,9 +14,9 @@ Cookpad Tech Kitchen #20 クックパッドのマイクロサービスプラッ�
 	- ELB -> ECS -> internal ELB -> ECS みたいな構成
 
 - 問題
-	- トラブルシュート, debug が大変
+	- トラブルシュート、 debug が大変
 	- capacity planning
-- 解決策1
+- 解決策 1
 	- Expeditor
 	- aws-xray
 		- distributed tracing
@@ -24,7 +24,7 @@ Cookpad Tech Kitchen #20 クックパッドのマイクロサービスプラッ�
 	- からの network proxy
 
 - service mesh
-	- library で リトライとか circuit braking を envoy でやる
+	- library でリトライとか circuit braking を envoy でやる
 
 - Envoy proxy
 	- data-plane
@@ -56,7 +56,7 @@ Cookpad Tech Kitchen #20 クックパッドのマイクロサービスプラッ�
 # 岩間 雄太 gRPC in Cookpad(仮)
 
 - これまでの cookpad
-	- Garage, GarageClient で API共通化
+	- Garage, GarageClient で API 共通化
 	- Autodoc でドキュメンテーション
 	- つらみ
 		- IDL, schema ほしい
@@ -67,13 +67,13 @@ Cookpad Tech Kitchen #20 クックパッドのマイクロサービスプラッ�
 	- generate code
 
 - 運用
-	- ECS の hako(自作) 上で動作
+	- ECS の hako(自作）上で動作
 	- cookpad/sds + Envoy で Client side Loadbalancing
 	- Envy 経由で受ける
 
-- Protocol Buffers は 1つのレポジトリ
+- Protocol Buffers は 1 つのレポジトリ
 	- 各サービスに submodule で配布
-	- CI で ドキュメント生成
+	- CI でドキュメント生成
 
 - Prometheus with envoy
 	- mtail が envoy のアクセスログを Prometheus 用に流す
@@ -118,6 +118,6 @@ Cookpad Tech Kitchen #20 クックパッドのマイクロサービスプラッ�
 
 - コンテナモニタリングは cAdvisor
 
-- AWS, ECS に最適化されすぎてない...?
-- スケールイン, スケールアウトを自分でやってるのがつらそう
+- AWS, ECS に最適化されすぎてない。..?
+- スケールイン、 スケールアウトを自分でやってるのがつらそう
 

@@ -32,7 +32,7 @@ AJS.toInit(function ($) {
 </script>
 ```
 
-confluence table で合計を出したい列を見出し行(`th`) にして、`#sum` にする
+confluence table で合計を出したい列を見出し行（`th`) にして、`#sum` にする
 
 ## 参考
 

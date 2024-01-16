@@ -7,11 +7,11 @@ apt add とか apk instal とか bundle install とか npm install とか go mod
 
 `DOCKER_BUILDKIT=1` を入れると、各 stage 毎はキャッシュが効くが、1 stage で COPY 後に RUN とかすると、RUN の以前の cache は使われない。
 
-そこで、`--mount-type=cache,targer=/PATH/TO/CACHEDIR` を入れると、1つの RUN に対して cache が作られ、2回目以降の build でその cache が mount される。
+そこで、`--mount-type=cache,targer=/PATH/TO/CACHEDIR` を入れると、1 つの RUN に対して cache が作られ、2 回目以降の build でその cache が mount される。
 
 ---
 ## 使い方
-1行目に呪文を入れる
+1 行目に呪文を入れる
 
 cache したい RUN で、頭に `--mount=type=cache,target=/app/node_modules` (node の npm install なので WORKDIR/node_modules) を入れる
 

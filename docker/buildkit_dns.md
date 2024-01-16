@@ -3,7 +3,7 @@ BuildKit は `--dns` オプションを読まない
 
 https://github.com/moby/buildkit/issues/734
 
-普通の docker run は読む(buildkitじゃないので)
+普通の docker run は読む（buildkit じゃないので）
 
 ```
 ➜ docker run --privileged -e DOCKER_BUILDKIT=1 -d docker:dind --storage-driver=overlay --dns 8.8.8.8

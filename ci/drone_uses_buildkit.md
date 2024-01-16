@@ -5,7 +5,7 @@ drone の中で docker image を build する plugin/docker でちょっと前�
 https://github.com/drone-plugins/drone-docker/pull/227
 
 
-雰囲気で .drone.yml を編集してあげると(environment が必要かはわからない)
+雰囲気で .drone.yml を編集してあげると（environment が必要かはわからない）
 
 ```diff
 -   image: plugins/docker

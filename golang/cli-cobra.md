@@ -1,5 +1,5 @@
 # [cobra](https://github.com/spf13/cobra)
-Go の cli フレームワーク。Moby(Docker)やKubernetes の cli tool としても使われている。
+Go の cli フレームワーク。Moby(Docker)や Kubernetes の cli tool としても使われている。
 ## init
 `github.com/nekottyo/go-cli` を作る
 ```bash
@@ -61,5 +61,5 @@ $ go run main.go add 2 3
 ```
 
 ## flag
-flag はglobal と local があり、subcommnad に引き継ぐ設定もある  
+flag は global と local があり、subcommnad に引き継ぐ設定もある  
 https://github.com/spf13/cobra#working-with-flags

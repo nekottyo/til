@@ -1,9 +1,9 @@
 スリムな Rails image を Docker Multi Stage Build で作る
 =====
 
-Rails 5.1 + webpack, Ruby 2.5.1 な imageを作る
+Rails 5.1 + webpack, Ruby 2.5.1 な image を作る
 
-bundle と asset pipeline & webpack 用の builder image と その成果物を COPY --from=builder で必要な部分だけ抜き、小さめな 実行用 imageを multi stage build で作る
+bundle と asset pipeline & webpack 用の builder image とその成果物を COPY --from=builder で必要な部分だけ抜き、小さめな実行用 image を multi stage build で作る
 
 - bundle install の成果物は /usr/local/bundle
 - nodoe_modules は precompile にしか使わないので  /public/asseert だけ引き抜く

@@ -3,11 +3,11 @@
 
 ## nvidia-docker 2.0について，大嶋悠司，NTT
 
-k8s で gpu cluster 管理したい!
+k8s で gpu cluster 管理したい！
 
 https://www.slideshare.net/Oshima0x3fd/kubernetesgpu
 
-- nvidia-docker2, nvidia-container-runtimeを使う
+- nvidia-docker2, nvidia-container-runtime を使う
 	- OCI runtime spec 準拠の container runtime
 - k8s -> docker -> containerd -> nv-runtime
 	- resources に指定してあげれば k8s でのスケジューリングができる

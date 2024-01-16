@@ -1,7 +1,7 @@
 # [jason](https://github.com/antonholmquist/jason)
 
 > Easy-to-use JSON Library for Go
-軽量json パーサ
+軽量 json パーサ
 
 ## jason parse
 

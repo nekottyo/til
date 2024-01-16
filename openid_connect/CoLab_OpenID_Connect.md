@@ -12,7 +12,7 @@
 比較的古い SOAP, XML でやりとり
 
 ## OAuth は認可
-ユーザのリソースに(Web APIが)アクセスすることが目的
+ユーザのリソースに（Web API が）アクセスすることが目的
 
 - 1.0a
 	- リクエストパラメータに署名
@@ -55,7 +55,7 @@ https://openid.net/connect
 	- implicit Flow に比べて認証強度が高い
 	- Refresh Token を発行するため長期間でもいける
 - Hybrid Flow
-	- サーバ, クライアント両方で認証
+	- サーバ、 クライアント両方で認証
 	- あんまり使わない
 
 ## 用語集
@@ -65,7 +65,7 @@ https://openid.net/connect
 - OP: OpenID Provider
 	- IdP とほぼ同じ、 OpenID での呼び方
 - RP: Relying Party
-	- IdP の認証を利用して ユーザにサービスを提供する
+	- IdP の認証を利用してユーザにサービスを提供する
 - Resource Server
 	- ユーザの属性情報などを提供
 - Claim
@@ -84,11 +84,11 @@ https://openid.net/connect
 	- `id_token` を検証してユーザ認証
 
 # ID Token
-issuer(idp: id_token発行したひと) が audience(RP) のために subject(id_tokenの対象, End-User) を認証したかを示すトークン
+issuer(idp: id_token 発行したひと）が audience(RP) のために subject(id_token の対象、 End-User) を認証したかを示すトークン
 
 ## format: JSON Web Token
 
-JSON を URL Safeな Base64 エンコードしたシグエンチャつきトークン
+JSON を URL Safe な Base64 エンコードしたシグエンチャつきトークン
 
 - ヘッダ、ペイロード、シグネチャで構成
 
@@ -122,28 +122,28 @@ Base64 エンコード
 - URS Safe
 	- `+` -> `-`
 	- `/` -> `_`
-	- `=` -> `''` (削る)
+	- `=` -> `''` (削る）
 
-- JSON の `{"` を Base64 にすると eyJ になる(アゲアゲ)
+- JSON の `{"` を Base64 にすると eyJ になる（アゲアゲ）
 - ピリオドで繋ぐ
-- シグネチャにかけて Base64 にで URLセーフにエンコード
+- シグネチャにかけて Base64 にで URL セーフにエンコード
 - ピリオドでつなげる
 
 
 ### 検証
 - ヘッダとペイロードを入力
-- 3つ目を公開鍵で検証
+- 3 つ目を公開鍵で検証
 
 
 # UserInfo Endpoint
 
-OpenID Connect ではよく利用される指名, 住所, メールアドレスなどの属性情報を取得しやすいように Claim を指定する
+OpenID Connect ではよく利用される指名、 住所、 メールアドレスなどの属性情報を取得しやすいように Claim を指定する
 
 - Req
 	- bearer つける
 - Res
 	- いろんな属性が帰ってくる
-	- 氏名, 送信可能なメールアドレス, 住所, 電話とか
+	- 氏名、 送信可能なメールアドレス、 住所、 電話とか
 
 - scope
 	- 必要な属性情報の group 的なやつ

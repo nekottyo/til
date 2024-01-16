@@ -18,7 +18,7 @@ cpu 使用率とか load average がでない
 
 [Kibana Monitoring Elasticsearch nodes doesn’t show CPU usage](https://discuss.elastic.co/t/kibana-monitoring-elasticsearch-nodes-doesnt-show-cpu-usage/86505)
 
-kibanaに `xpack.monitoring.ui.container.elasticsearch.enabled: false` を食わせれば良い
+kibana に `xpack.monitoring.ui.container.elasticsearch.enabled: false` を食わせれば良い
 
 https://www.elastic.co/guide/en/kibana/current/monitoring-settings-kb.html
 

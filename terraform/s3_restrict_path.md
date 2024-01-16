@@ -1,7 +1,7 @@
 terraform で s3 で特定の path だけアクセスを許可する policy の書き方
 ===
 
-path を限定させて, `s3:GetObject` と`s3:List*` を特定 path に許可させる
+path を限定させて、 `s3:GetObject` と `s3:List*` を特定 path に許可させる
 同時に、`s3:List*` は bucket に対して与え、 condition で prefix check をする。
 list object を dynamic block で `for_each` で回すのと、 condition の values も list で展開するといい感じに書ける。
 

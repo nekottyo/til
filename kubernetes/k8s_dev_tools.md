@@ -38,4 +38,4 @@ https://github.com/solo-io/squash
 
 - vscod/intellij で remote debug できる。ぱない
 - 活発
-- remote debug したいなら一択?
+- remote debug したいなら一択？

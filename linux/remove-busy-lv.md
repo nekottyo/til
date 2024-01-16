@@ -14,12 +14,12 @@ VG1--hoge   253   7 L--w    2    1      0 LVM-AAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaa
 VG1--hogep1 253   8 L--w    0    1      0 part1-LVM-AAAAAAAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaa
 ```
 
-hoge が hogep1, p2 から参照されていて Openが 2 なので busy
+hoge が hogep1, p2 から参照されていて Open が 2 なので busy
 
 
 ## 削除方法
 
-partから消して参照をなくす
+part から消して参照をなくす
 
 ```
 # dmsetup remote /dev/mapper/VG1-hogep2
@@ -28,7 +28,7 @@ partから消して参照をなくす
 ```
 
 
-その後lvremove
+その後 lvremove
 ```
 # lvremove /dev/VG1/hoge
   Logical volume "hoge" successfully removed

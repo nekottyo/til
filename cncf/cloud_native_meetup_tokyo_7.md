@@ -36,7 +36,7 @@ https://www.telepresence.io/
     - Service Configration
         - KVS, transaction, watch
 - ペパボ consul 使ってる
-    - k8s 移行してるが, いい感じに既存 consul と連携したい
+    - k8s 移行してるが、 いい感じに既存 consul と連携したい
 - Consul Connect
     - 通信の許可/禁止
     - sidecar proxy
@@ -45,14 +45,14 @@ https://www.telepresence.io/
             - https://www.consul.io/intro/vs/proxies.html
     - CA もいい感じに管理してくれる
     - アプリケーション自身に proxy を組み込める
-    - 簡単に service-to-service の暗号化,制御ができる
+    - 簡単に service-to-service の暗号化、制御ができる
 - consul kubernetes integration
-    - consul cluster は k8s 跨いで クラスタを作れる
+    - consul cluster は k8s 跨いでクラスタを作れる
     - daemonset として consul client をデプロイすると、k8s node がそれぞれ Consul member となる
-    - helm を使うと pod IPになって node IP じゃないので注意
+    - helm を使うと pod IP になって node IP じゃないので注意
     - 既存インフラに Consul cluster があるとよさそう
     - k8s <-> Consul で同期ができる
-- istio + Envoy じゃなくて consul connect でいける?
+- istio + Envoy じゃなくて consul connect でいける？
 
 ## 分散イメージレジストリの検討 〜Beiran & Dragonfly〜 @yupeji @furkanmustafa
 - Docker pull 遅すぎ問題
@@ -73,6 +73,6 @@ https://www.telepresence.io/
 	- P2P based image registry
 - Beiran
 	- https://gitlab.beiran.io/beiran/beiran
-		- クリエーションラインだから GitLabなのか
+		- クリエーションラインだから GitLab なのか
 	- 隣の人が image 持ってたらそれを引っ張れる
 

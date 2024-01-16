@@ -31,10 +31,10 @@ https://github.com/albfan/terminator
 
 https://github.com/jwilm/alacritty
 
-日本語表示に難あり。2バイト文字以外なら使いやすい。
+日本語表示に難あり。2 バイト文字以外なら使いやすい。
 GPU Accelareted。
 
-フォントサイズ Up/Down のキーバインドが、config ファイルを共有する場合 Mac/Linux でうまくいかない(Mac は Command だが, Linux は Ctrl)
+フォントサイズ Up/Down のキーバインドが、config ファイルを共有する場合 Mac/Linux でうまくいかない（Mac は Command だが、 Linux は Ctrl)
 </br>
 ssh 経由だと表示が崩れる。ダブルクリックでの copy on select が不発するときが多い。
 

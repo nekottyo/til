@@ -40,9 +40,9 @@ ls: cannot access {hoge,fuga}/aaa.txt: No such file or directory
 >   * word splitting
 >   * filename expansion
 
-`$HOGE`の時点では braceではないため進んで、 variable expansion で展開されてそのまま `ls` の引数となったため
+`$HOGE` の時点では brace ではないため進んで、 variable expansion で展開されてそのまま `ls` の引数となったため
 
-`eval` や subshell 経由の実行をすると再度上から式評価されるため brace expansionされる
+`eval` や subshell 経由の実行をすると再度上から式評価されるため brace expansion される
 
 
 # 解決策

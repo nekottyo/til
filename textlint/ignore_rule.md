@@ -15,7 +15,7 @@ https://github.com/prh/rules/blob/master/media/WEB+DB_PRESS.yml#L2236-L2239
 ```
 以下のルールによって、`マスタ merge` となってしまう。
 
-大体は [textlint-filter-rule-allowlist](https://github.com/textlint/textlint-filter-rule-allowlist) で回避可能なのだが、 rule 評価のタイミング(ちゃんと調べてないから分からん) 起因なのか、
+大体は [textlint-filter-rule-allowlist](https://github.com/textlint/textlint-filter-rule-allowlist) で回避可能なのだが、 rule 評価のタイミング（ちゃんと調べてないから分からん）起因なのか、
 `.textlintrc` の `filters.allowlist.allow: ["/master/"]` のように書いても rule を無視できない事がある。
 
 ## prh.yaml による ignore

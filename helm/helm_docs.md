@@ -21,7 +21,7 @@ config:
     - hashbash
 ```
 
-なお、type は values から `int`, `string`, `float`, `bool` を類推するが、`# -- (<types>)` で 型ヒントを与えることが出来る。
+なお、type は values から `int`, `string`, `float`, `bool` を類推するが、`# -- (<types>)` で型ヒントを与えることが出来る。
 
 ```yaml
 controller:

@@ -1,7 +1,7 @@
 kubectl config set-context と use-context
 =====
 
-kubectl config get-context で current contextが取れる
+kubectl config get-context で current context が取れる
 
 ```
  ~> kubectl config get-contexts

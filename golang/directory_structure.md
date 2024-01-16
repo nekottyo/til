@@ -24,7 +24,7 @@ Golang directory structure
     - tow most common patterns
     - このパターンは or ではなく and もありうる
         - `cmd` layout pattern
-            - 1つ以上の binary が必要なときによい
+            - 1 つ以上の binary が必要なときによい
                 - `your_project/cmd/your_app`
             - main を持っているので、それぞれのパッケージが `go get` 可能
             - `cmd/your_app` 以下で上の structure を作るパターン

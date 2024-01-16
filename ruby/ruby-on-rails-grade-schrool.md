@@ -127,13 +127,13 @@ class UsersController < ApplicationController
 end
 ```
 
-twitter っぽくしたいとき `http://hoge.com/users/show/nekottyo`  みたいに名前 が URI になるのはどうすれば?
+twitter っぽくしたいとき `http://hoge.com/users/show/nekottyo`  みたいに名前が URI になるのはどうすれば？
 
 # ルーティング
 
-`http://hoge.com/users/show/nekottyo` がしたい！ -> ルーティング
+`http://hoge.com/users/show/nekottyo` がしたい！　-> ルーティング
 
-- Rails での アクセスした URL を元に振り分けるもの
+- Rails でのアクセスした URL を元に振り分けるもの
 >ユーザーがURLにアクセス ⇒ ルーティングが仕分け ⇒ コントローラーが値を入れる ⇒ ビューがコントローラーから渡された値を表示
 
 
@@ -152,12 +152,12 @@ end
 
 http://127.0.0.1:3000/user/show/nekottyo
 
-で名前ベースで 表示できるようになる
+で名前ベースで表示できるようになる
 
 
 # DB
 
-- DBの構造 -> スキーマ
+- DB の構造 -> スキーマ
 - マイグレーションファイル -> スキーマ定義
 
 > 注 migrationという名の通り、移住をしやすくするためのようなイメージです。 移住するときに家を立てなければなりませんが、家の設計図さえあれば、いくらでも同じ家を立てることができます。 その家の設計図がmigration fileです。しかし、このmigration fileだけでは、住めません。 家をたてるために、その設計図から家を実際に建てなければなりません。それがmigrateです。
@@ -261,7 +261,7 @@ rails g model tweet title:string context:text
 
 ![new](https://raw.github.com/mitakalab/wiki/master/screenshots/rails/rails-10.png)
 
-view の form を入れる(フォームヘルパー)
+view の form を入れる（フォームヘルパー)
 
 `app/views/tweets/new.html.erb`
 
@@ -278,7 +278,7 @@ view の form を入れる(フォームヘルパー)
 undefined method `tweets_path' for #<#<Class:0x00007f1e7c6ea9c8>:0x00007f1e7c3db1b0>
 ```
 
-form の投げ先がわからん ので route に足す
+form の投げ先がわからんので route に足す
 
 ```diff
 Rails.application.routes.draw do
